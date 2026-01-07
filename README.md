@@ -1,57 +1,29 @@
-At the beginning of each academic semester at HTU University, the academic administration faces challenges in organizing the process of course assignment for instructors and teaching assistants (TAs).
-Managing a large number of courses, instructors, and time slots often leads to scheduling conflicts and difficulties in tracking course assignments efficiently.
+At the beginning of each academic semester at HTU University, the academic administration faces challenges in organizing the process of assigning courses to instructors and teaching assistants (TAs). Handling a large number of courses, instructors, and available time slots often leads to scheduling conflicts and difficulties in efficiently tracking course assignments.
 
-To address this issue, the university decided to develop an electronic application that helps organize and manage the course registration and scheduling process in a centralized and structured manner.
-The application is designed around multiple pages, where each page is responsible for a specific task that supports effective management.
+To address this problem, the university decided to develop an electronic application that helps organize and manage the course registration and scheduling process in a centralized and structured manner. The application is designed using multiple pages, where each page is responsible for performing a specific task that supports effective academic management.
 
-The application includes:
+The application includes an Add Schedule page that allows administrators to add courses to the semester schedule by specifying the lecture time, selected course, assigned instructor, and teaching assistant. It also includes a View Schedule page that displays the complete schedule in a clear and organized format. In addition, a Manage Courses page is provided to view and manage all available courses, and a Manage Instructors page is used to manage instructor information and their assigned courses.
 
-An Add Schedule page that allows adding courses to the semester schedule by specifying lecture time, course, assigned instructor, and teaching assistant.
+The development team has completed building the application. The back-end is implemented using Spring Boot and is hosted in a separate GitHub repository.
 
-A View Schedule page that displays the complete schedule in a clear and organized format.
+The system provides the following back-end API methods:
 
-A Manage Courses page to view and manage available courses.
+GET Courses
+This method retrieves all available courses in the system. It is used to display the list of courses and allows administrators to select courses when creating schedules. This method is used in the Courses page and in schedule creation forms.
 
-A Manage Instructors page to manage instructor information and their assigned courses.
+POST Course
+This method is responsible for creating a new course. It saves course details such as name, code, description, and instructor, and stores the data in the Courses table or collection. It is used in the course management page.
 
-The development team has completed building the application.
-The back-end is implemented using Spring Boot, and the front-end is hosted in a separate GitHub repository.
+GET Scheduled Classes
+This method retrieves all scheduled classes. It returns detailed schedule information including the course, day, time slot, location, and instructor. It is used in the “All Scheduled Classes” page.
 
-Deployment & Infrastructure Requirements
+POST Scheduled Class
+This method creates a new scheduled class by linking a course to a specific day and time slot. It prevents scheduling conflicts and saves the schedule entry in the database. This method is used in the admin or staff scheduling interface.
 
-The university plans to deploy the system as a production-ready platform and has the following requirements:
+PATCH Scheduled Class
+This method updates an existing scheduled class. It allows modifications to the time, day, location, or instructor, and is used to modify schedules, fix conflicts, or reschedule classes.
 
-The front-end application must be deployed using AWS Amplify.
+DELETE Scheduled Class
+This method deletes a scheduled class from the system. It removes the class from the schedule and frees the associated time slot.
 
-The back-end application must be deployed on AWS using EC2 instances.
-
-The application must be accessible through a custom domain name that can be easily managed and updated.
-
-The system must support high availability and automatic scaling to handle increased usage during peak registration periods.
-
-The application must provide fast access to users from different geographical locations, as the university plans to open branches in multiple countries.
-
-The system must run continuously for many years, and any service failure or abnormal behavior must be monitored and detected automatically.
-
-When critical system events occur (such as instance failure, scaling actions, or deployment changes), the responsible technical team must be notified immediately.
-
-The infrastructure should support safe application updates without service interruption.
-
-Tasks
-
-Task 1 – Architecture Design
-Propose an AWS-based infrastructure architecture that satisfies the above requirements.
-Clearly explain the services used and how they contribute to availability, scalability, global access, monitoring, and notification.
-
-Task 2 – Implementation
-Implement the proposed solution by:
-
-Deploying the front-end application using AWS Amplify.
-
-Deploying the Spring Boot back-end application on AWS EC2.
-
-Configuring the required AWS services to support domain management, global access, monitoring, event handling, and notifications.
-
-Ensuring that the application can be updated without service interruption.
-
-The implementation should follow best practices and demonstrate a clear understanding of cloud infrastructure concepts.
+For deployment instructions and additional configuration details, the back-end GitHub repository should be reviewed, as it contains the necessary information for correctly deploying the application.
