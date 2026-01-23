@@ -1,7 +1,7 @@
 // app/api/schedules/route.ts
 import { NextResponse } from 'next/server';
 
-const API_URL = 'http://54.242.249.203:8080/schedules';
+const API_URL = 'http://htuschedemy.htufolio.com/schedules';
 
 export async function GET() {
   try {

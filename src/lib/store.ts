@@ -8,8 +8,8 @@ import {
   tas as mockInitialTAs, tas
 } from './data';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://54.242.249.203:8080';
-const API_BASE_URL_ROUTING = 'https://master.d2hh6o27ll1srl.amplifyapp.com/';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://htuschedemy.htufolio.com/';
+const API_BASE_URL_ROUTING = 'http://htuschedemy.htufolio.com/';
 // const API_BASE_URL_ROUTING = 'http://localhost:3001/';
 
 interface AppState {
