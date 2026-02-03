@@ -9,7 +9,7 @@ import {
 } from './data';
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://htuschedemy.htufolio.com/';
-const API_BASE_URL_ROUTING = 'http://htuschedemy.htufolio.com/';
+const API_BASE_URL_ROUTING = 'http://htuschedemy.htufolio.com';
 // const API_BASE_URL_ROUTING = 'http://localhost:3001/';
 
 interface AppState {
